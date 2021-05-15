@@ -1,55 +1,19 @@
-var array=["meb1.jpg","meb2.jpg","meb3.jpg","meb4.jpg"]
-var i=0;
-
-setInterval(changeup, 4000)
-
-function changeup() {
-	if (i>2){
-		i=-1;
+let switches = ['switch1','switch2','switch3','switch4'];
+let i = 0;
+let number = document.getElementById(switches[i]).value;
+setInterval(function(){
+	if (i<3){
+		i++;
+	} else {
+		i=0;
 	}
-	i+=1;
-	document.getElementById('furnit2').src=array[i];
+	document.getElementById(switches[i]).checked = true;
+}, 3000);
+let radiobtn = document.getElementById("switch")
+radiobtn = document.addEventListener('mouseup',setSlide)
+function setSlide() {
+	let num = document.getElementById('switch').value;
 }
-
-function changedown() {
-	if (i<1){
-		i=4;
-	}
-	i-=1;
-	document.getElementById('furnit2').src=array[i];
-}
-/*let numElement = document.getElementById("num")
-let newNumber = document.getElementById("newNumber")
-newNumber.addEventListener('keyup',setNumber)
-
-let nameElement = document.getElementById("nameElement")
-let newName = document.getElementById("newName")
-newName.addEventListener('keyup',setName)
-
-let dateElement1 = document.getElementById("dateMonth")
-let newDate1 = document.getElementById("newDate")
-newDate1.addEventListener('mouseup',setDate)
-
-let dateElement2 = document.getElementById("dateYear")
-let newDate2 = document.getElementById("newYear")
-newDate2.addEventListener('mouseup',setYear)
-
-function setNumber() {
-	numElement.innerHTML = newNumber.value
-}
-
-function setName() {
-	nameElement.innerHTML = newName.value
-}
-
-function setDate() {
-	dateElement1.innerHTML = newDate1.value
-}
-
-function setYear() {
-	dateElement2.innerHTML = newDate2.value
-}*/
-
 /*<button id="left1" onclick="changedown()"><b>‹</b></button>
   <button id="right1" onclick="changeup()"><b>›</b></button>
 
@@ -90,4 +54,25 @@ function setYear() {
 #right1:hover {
 	color: #3ebee6;
 	background-color: black;
+}*/
+
+/*var array=["meb1.jpg","meb2.jpg","meb3.jpg","meb4.jpg"]
+var i=0;
+
+setInterval(changeup, 4000)
+
+function changeup() {
+	if (i>2){
+		i=-1;
+	}
+	i+=1;
+	document.getElementById('furnit2').src=array[i];
+}
+
+function changedown() {
+	if (i<1){
+		i=4;
+	}
+	i-=1;
+	document.getElementById('furnit2').src=array[i];
 }*/

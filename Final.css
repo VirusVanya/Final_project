@@ -1,6 +1,6 @@
 body {
 	background-color: white;
-	overflow-x: visible;
+	overflow-x: hidden;
 }
 
 h1 {
@@ -65,16 +65,18 @@ img {
 }
 
 .SearchBlock {
+	display: flex;
+	width: 385px;
+	height: 35px;
 	position: relative;
-	top: -45px;
+	top: -10px;
+	margin-left: 45%;
 }
 
 #search {
 	background: white;
 	border: none;
 	position: relative;
-	top: 35px;
-	left: 870px;
 	height: 34px;
 	width: 350px;
 	font-size: 16px;
@@ -84,8 +86,6 @@ img {
 	background: white;
 	border: none;
 	position: relative;
-	top: 36px;
-	left: 476px;
 	height: 36px;
 	width: 36px;
 	font-size: 15px;
@@ -95,71 +95,138 @@ img {
 	height: 40px;
 	width: 40px;
 	position: relative;
-	top: -50px;
-	left: 1380px;
+	top: -7%;
+	left: 90%;
 }
 
-#profile {
+#profile{
 	height: 40px;
 	width: 40px;
 	position: relative;
-	top: -50px;
-	left: 1450px;
+	left: 92%;
+	top: -7%;
+}
+
+.Slider input{
+	display: none;
 }
 
 .Slider {
+	height: 500px;
+	width: 100%;
 	position: relative;
-	top: 80px;
+	text-align: center;
+	top: -430px;
+	margin: 0 auto;
 }
 
-.Slider1 {
+#slides article{
+	width: 20%;
+	float: left;
+}
+
+#slides .image{
+	position: relative;
+	left: -550px;
+	width: 300%;
+	line-height: 0;
+}
+
+#overflow {
+	width: 100%;
 	overflow: hidden;
-	width: 400px;
+}
+
+.image img{
+	width: 800px;
 	height: 500px;
-	position: relative;
-	top: -510px;
-	left: 0px;
-	z-index: 1;
+	margin-right: 40px;
 }
 
-.Slider1 img {
-	position: absolute;
+#switch1:checked ~ #controls label:nth-child(4),
+#switch2:checked ~ #controls label:nth-child(1),
+#switch3:checked ~ #controls label:nth-child(2),
+#switch4:checked ~ #controls label:nth-child(3){
+	float: left;
+	margin: 0 0 0 -84px;
+	display: flex;
+	height: 68px;
+	width: 68px;
+}
+
+#switch1:checked ~ #controls label:nth-child(2),
+#switch2:checked ~ #controls label:nth-child(3),
+#switch3:checked ~ #controls label:nth-child(4),
+#switch4:checked ~ #controls label:nth-child(1){
+	float: left;
+	margin: 0 -84px 0 0;
+	display: flex;
+	height: 68px;
+	width: 68px;
+}
+
+label, a{
+	cursor: pointer;
+}
+
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -46.1%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -92.2%;
+}
+
+#switch4:checked ~ #slides .image{
+	margin-left: -138.3%;
+}
+
+#controls{
+	margin: -25% 0 0 0;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
-    object-position: right top;
+	height: 50px;
 }
 
-.Slider2 {
-	width: 750px;
-	height: 500px;
-	position: relative;
-	top: -1010px;
-	left: 430px;
-	z-index: 1;
+#active label{
+	border-radius: 10px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: #bbb;
 }
 
-.Slider2 img {
-	width: 100%;
-	height: 100%;
+#active{
+	margin: 23% 0 0;
+	text-align: center;
 }
 
-.Slider3 {
-	overflow: hidden;
-	width: 400px;
-	height: 500px;
-	position: relative;
-	top: -1510px;
-	left: 1207px;
-	z-index: 1;
+#active label:hover{
+	background: #76c8ff;
+	border-color: #777 !important;
 }
 
-.Slider3 img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-    object-position: left top;
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4){
+	background: #18a3dd;
+	background-color: #18a3dd !important;
+}
+
+#slides .image{
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{
+	opacity: 0.6;
+}
+
+#controls label{
+	transition: opacity 0.2s ease-out;
 }
 
 .Advert {
@@ -185,7 +252,7 @@ img {
 	width: 300px;
 	background: black;
 	position: relative;
-	top: 50px;
+	margin-top: 10px;
 	left: 30px;
 	font-size: 24px;
 	color: white;
@@ -202,7 +269,7 @@ a {
 	width: 100%;
 	justify-content: space-around;
 	position: relative;
-	top: 40px;
+	top: 50px;
 	padding-left: 70px;
 	font-family: "Gilroy", sans-serif;
 }
@@ -244,17 +311,16 @@ a {
 }
 
 .Products {
-	width: 95%;
-	height: 1290px;
 	position: relative;
 	top: -20px;
 	margin-left: 2%;
 	margin-right: 2%;
 	display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     grid-template-rows: repeat(3, 420px);
     grid-gap: 15px;
     padding: 15px;
+    z-index: 1;
 }
 
 #prod {
@@ -267,19 +333,20 @@ a {
 
 .ProdBtns {
 	display: none;
+	align-items: center;
 	flex-direction: column;
 	background-color: #454545;
 	opacity: 0.8;
-	position: absolute;
-	width: 377px;
-	height: 420px;
+	position: relative;
+	bottom: 85.5%;
+	width: 100%;
+	height: 100%;
 	z-index: 2;
 }
 
 .Butn {
 	position: relative;
-	top: 150px;
-	left: 80px;
+	top: 35%;
 	margin: 5px;
 	background-color: white;
 	border: none;
@@ -298,66 +365,6 @@ a {
 	display: flex;
 }
 
-.one {
-	grid-column: 1/1;
-	grid-row: 1/1;
-}
-
-.two {
-	grid-column: 2/2;
-	grid-row: 1/1;
-}
-
-.three {
-	grid-column: 3/3;
-	grid-row: 1/1;
-}
-
-.four {
-	grid-column: 4/4;
-	grid-row: 1/1;
-}
-
-.five {
-	grid-column: 1/1;
-	grid-row: 2/2;
-}
-
-.six {
-	grid-column: 2/2;
-	grid-row: 2/2;
-}
-
-.seven {
-	grid-column: 3/3;
-	grid-row: 2/2;
-}
-
-.eight {
-	grid-column: 4/4;
-	grid-row: 2/2;
-}
-
-.nine {
-	grid-column: 1/1;
-	grid-row: 3/3;
-}
-
-.ten {
-	grid-column: 2/2;
-	grid-row: 3/3;
-}
-
-.eleven {
-	grid-column: 3/3;
-	grid-row: 3/3;
-}
-
-.twelve {
-	grid-column: 4/4;
-	grid-row: 3/3;
-}
-
 .ImageItem {
 	width: 100%;
 	height: 270px;
@@ -373,7 +380,7 @@ a {
 	font-size: 18px;
 	position: relative;
 	top: 30px;
-	left: 715px;
+	left: 45%;
 }
 
 .Name {
@@ -551,11 +558,6 @@ a {
 	bottom: 5px;
 }
 
-.SpecialTips {
-	position: relative;
-	top: 21px;
-}
-
 #sharesetup {
 	position: relative;
 	top: 120px;
@@ -572,72 +574,72 @@ a {
 }
 
 #oneimg {
-	position: absolute;
-	top: 3650px;
+	position: relative;
+	top: 50px;
 	left: -105px;
 	height: 390px;
 	width: 340px;
 }
 
 #twoimg {
-	position: absolute;
-	top: 3750px;
+	position: relative;
+	top: 50px;
 	left: 245px;
 	height: 290px;
 	width: 500px;
 }
 
 #threeimg {
-	position: absolute;
-	top: 3850px;
+	position: relative;
+	top: 50px;
 	left: 755px;
 	height: 392px;
 	width: 295px;
 }
 
 #fourimg {
-	position: absolute;
-	top: 3800px;
+	position: relative;
+	top: 30px;
 	left: 1060px;
 	height: 330px;
 	width: 410px;
 }
 
 #fiveimg {
-	position: absolute;
-	top: 3690px;
+	position: relative;
+	top: 90px;
 	left: 1480px;
 	height: 440px;
 	width: 300px;
 }
 
 #siximg {
-	position: absolute;
-	top: 4049px;
+	position: relative;
+	top: 49px;
 	left: -60px;
 	height: 440px;
 	width: 340px;
 }
 
 #sevenimg {
-	position: absolute;
-	top: 4049px;
+	position: relative;
+	top: 49px;
 	left: 290px;
 	height: 335px;
 	width: 455px;
 }
 
 #eightimg {
-	position: absolute;
-	top: 4139px;
+	position: relative;
+	top: 39px;
 	left: 1060px;
 	height: 242px;
 	width: 178px;
 }
 
 #nineimg {
-	position: absolute;
-	top: 4139px;
+	position: relative;
+	top: 39px;
 	left: 1248px;
 	height: 480px;
 	width: 380px;
@@ -646,16 +648,16 @@ a {
 #prefooter {
 	width: 1400px;
 	border: 1px solid #D8D8D8;
-	position: absolute;
-	top: 4710px;
+	position: relative;
+	top: 110px;
 	left: 120px;
 }
 
 .Footer {
 	width: 95%;
 	height: 370px;
-	position: absolute;
-	top: 4750px;
+	position: relative;
+	top: 150px;
 	left: 50px;
 	display: flex;
 	justify-content: space-around;
@@ -739,4 +741,32 @@ a {
 #location {
 	width: 20px;
 	height: 20px;
+}
+
+@media (min-width: 1647px) {
+	.Products {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    grid-template-rows: repeat(3, 420px);
+    }
+}
+
+@media (max-width: 1647px) {
+	.Products {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    grid-template-rows: repeat(4, 420px);
+    }
+}
+
+@media (max-width: 1246px) {
+	.Products {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    grid-template-rows: repeat(6, 420px);
+    }
+}
+
+@media (max-width: 845px) {
+	.Products {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    grid-template-rows: repeat(12, 420px);
+    }
 }
