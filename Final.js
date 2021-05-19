@@ -1,23 +1,41 @@
-var array=["meb1.jpg","meb2.jpg","meb3.jpg","meb4.jpg"]
-var i=0;
-
-setInterval(changeup, 4000)
-
-function changeup() {
-	if (i>2){
-		i=-1;
+let switches = ['switch1','switch2','switch3','switch4'];
+let i = 0;
+let number = document.getElementById(switches[i]).value;
+setInterval(function(){
+	if (i<3){
+		i++;
+	} else {
+		i=0;
 	}
-	i+=1;
-	document.getElementById('furnit2').src=array[i];
+	document.getElementById(switches[i]).checked = true;
+}, 3000);
+function setSlide() {
+	let num = document.getElementByClassName('switch').value;
 }
-
-function changedown() {
-	if (i<1){
-		i=4;
-	}
-	i-=1;
-	document.getElementById('furnit2').src=array[i];
+/*let firstSwitch = document.getElementById('switch1');
+firstSwitch = document.addEventListener('mouseup',setSlide1)
+let secondSwitch = document.getElementById('switch2');
+secondSwitch = document.addEventListener('mouseup',setSlide2)
+let thirdSwitch = document.getElementById('switch3');
+thirdSwitch = document.addEventListener('mouseup',setSlide3)
+let fourthSwitch = document.getElementById('switch4');
+fourthSwitch = document.addEventListener('mouseup',setSlide4)
+function setSlide1() {
+    num = 0;
+    setInterval(Slide, 3000);
 }
+function setSlide2() {
+    num = 1;
+    setInterval(Slide, 3000);
+}
+function setSlide3() {
+    num = 2;
+    setInterval(Slide, 3000);
+}
+function setSlide4() {
+    num = 3;
+    setInterval(Slide, 3000);
+}*/
 /*let numElement = document.getElementById("num")
 let newNumber = document.getElementById("newNumber")
 newNumber.addEventListener('keyup',setNumber)
@@ -50,44 +68,75 @@ function setYear() {
 	dateElement2.innerHTML = newDate2.value
 }*/
 
-/*<button id="left1" onclick="changedown()"><b>‹</b></button>
-  <button id="right1" onclick="changeup()"><b>›</b></button>
-
-    #left1 {
+/*
+#oneimg {
 	position: relative;
-	top: 255px;
-	left: 600px;
-	height: 40px;
-	width: 40px;
-	text-align: center;
-	border-radius: 20px;
-	font-size: 25px;
-	color: black;
-	background-color: #3ebee6;
-	z-index: 2;
+	top: 50px;
+	left: -105px;
+	height: 390px;
+	width: 340px;
 }
 
-#right1 {
+#twoimg {
 	position: relative;
-	top: 255px;
-	left: 1355px;
-	position: relative;
-	height: 40px;
-	width: 40px;
-	text-align: center;
-	border-radius: 20px;
-	font-size: 25px;
-	color: black;
-	background-color: #3ebee6;
-	z-index: 2;
+	top: 50px;
+	left: -100px;
+	height: 290px;
+	width: 500px;
 }
 
-#left1:hover {
-	color: #3ebee6;
-	background-color: black;
+#threeimg {
+	position: relative;
+	top: 260px;
+	left: -95px;
+	height: 392px;
+	width: 295px;
 }
 
-#right1:hover {
-	color: #3ebee6;
-	background-color: black;
+#fourimg {
+	position: relative;
+	top: 130px;
+	left: -90px;
+	height: 330px;
+	width: 410px;
+}
+
+#fiveimg {
+	position: relative;
+	top: -314px;
+	left: 1477px;
+	height: 440px;
+	width: 300px;
+}
+
+#siximg {
+	position: relative;
+	top: 55px;
+	left: -350px;
+	height: 440px;
+	width: 340px;
+}
+
+#sevenimg {
+	position: relative;
+	top: -50px;
+	left: -345px;
+	height: 335px;
+	width: 441px;
+}
+
+#eightimg {
+	position: relative;
+	top: -63px;
+	left: -36px;
+	height: 242px;
+	width: 178px;
+}
+
+#nineimg {
+	position: relative;
+	top: -309px;
+	left: 1244px;
+	height: 480px;
+	width: 380px;
 }*/
